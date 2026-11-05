@@ -36,7 +36,8 @@ fun TelemetryScreen(state: QalamCampusUiState) {
                         Text(state.telemetry?.status ?: "ONLINE", color = Color.Black, fontWeight = FontWeight.Bold, modifier = Modifier.padding(4.dp))
                     }
                 }
-                Text("اسم العتاد: ${state.telemetry?.peripheralName ?: 'Smart Stylus Digitizer 4096-Level + BLE Beacon'}", fontWeight = FontWeight.Bold, color = BrandTextPrimary, fontSize = 14.sp)
+                val pName = state.telemetry?.peripheralName ?: "Smart Stylus Digitizer 4096-Level + BLE Beacon"
+                Text("اسم العتاد: $pName", fontWeight = FontWeight.Bold, color = BrandTextPrimary, fontSize = 14.sp)
                 Text("جودة الإشارة: ${state.telemetry?.signalDbm ?: -58} dBm  •  البطارية: ${state.telemetry?.batteryPct ?: 98}%", color = BrandSecondary, fontSize = 12.sp)
                 
                 Divider(color = BrandCard)
